@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import React,{useState} from 'react'
 import './App.css';
 
 function App() {
+  const [value,setValue] = useState('');
+
+  const onChange = (e) => {
+    setValue(e.target.value)
+
+  }
+
+ 
+
+  
+  const onKeyDown = (e) => {
+    if(e.key === 'Enter'){
+     setValue('');
+    }
+  }
+  
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-wrapper">
+    <div className="main-todo-wrapper">
+      <div className="todo-title">
+        <h1>T O D O</h1>
+        <i class="fas fa-moon"></i>
+      </div>
+      <div className="input-div">
+        <input  type="text" placeholder='type here' value={value} onChange={onChange} onKeyDown={onKeyDown}/>
+        </div>
+      <div className="list-wrapper">
+
+      </div>
+    </div>
+
     </div>
   );
 }
