@@ -3,13 +3,23 @@ import './App.css';
 import Form from './components/Form'
 import TodoList from './components/TodoList'
 import {BsFillMoonFill} from 'react-icons/bs'
+import {BsFillSunFill} from 'react-icons/bs'
+
+
+
 function App() {
  
   const [inputText, setInputText]=useState('')
   const [todos,setTodos] = useState([])
+  const [darkMode, setDarkMode] = useState(true)
 
 
+  const darkModeHandler = () => {
+        setDarkMode(!darkMode)
+        darkMode ? document.body.style.backgroundColor = "hsl(235, 21%, 11%)": document.body.style.backgroundColor = "hsl(0, 0%, 98%)";
 
+         
+  }
   
 
   return (
@@ -17,10 +27,10 @@ function App() {
     <div className="main-todo-wrapper">
       <div className="todo-title">
         <h1>T O D O</h1>
-        <BsFillMoonFill className='moon-icon' />
+        {darkMode ? <BsFillMoonFill className='moon-icon' onClick={darkModeHandler}/> : <BsFillSunFill className='moon-icon' onClick={darkModeHandler}/>}
       </div>
-     <Form todos={todos} setTodos={setTodos} inputText={inputText} setInputText={setInputText} />
-     <TodoList todos={todos} setTodos={setTodos} />
+     <Form todos={todos} setTodos={setTodos} inputText={inputText} setInputText={setInputText}  darkMode={darkMode}/>
+     <TodoList todos={todos} setTodos={setTodos} darkMode={darkMode} />
       
      </div>
 
