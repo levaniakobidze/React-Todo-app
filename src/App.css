@@ -137,6 +137,10 @@ transition: all 0.5s;
   background: #25273c;
 }
 
+.todo-item-dark{
+color:hsl(234, 39%, 85%);
+}
+
 ::placeholder {
   color: rgb(87, 87, 87);
   font-size: 1.1rem;

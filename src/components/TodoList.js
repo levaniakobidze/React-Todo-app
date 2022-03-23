@@ -14,7 +14,7 @@ function TodoList({todos,setTodos,darkMode}) {
           {todos.map((todo) => {
               return (
                   <>
-                  <Todo key={todo.id} setTodos={setTodos} text={todo.text} id={todo.id} todos={todos}/>
+                  <Todo key={todo.id} setTodos={setTodos} text={todo.text} id={todo.id} todos={todos} darkMode={darkMode}/>
                   
                   
                   </>

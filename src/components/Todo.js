@@ -2,9 +2,9 @@ import React,{useState} from 'react'
 import '../App.css'
 import {AiOutlineClose} from 'react-icons/ai'
 
-function Todo({todos,text,setTodos,id}) {
+function Todo({todos,text,setTodos,id,darkMode}) {
          
-   const [activeItem, setActiveItem] = useState(true);
+   const [activeItem, setActiveItem] = useState(false);
 
    const checkHandler = () => {
      setActiveItem(!activeItem);
@@ -18,7 +18,7 @@ function Todo({todos,text,setTodos,id}) {
     <div  className='todo'>
       <div className="todo-item-cont">
       <input type="checkbox" onClick={checkHandler} />
-        <li  className={activeItem ? 'todo-item' : 'todo-item non-active'}>
+        <li  className={activeItem ? 'todo-item'  : 'todo-item non-active' } >
             {text}
             
             
