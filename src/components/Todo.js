@@ -4,7 +4,7 @@ import {AiOutlineClose} from 'react-icons/ai'
 
 function Todo({todos,text,setTodos,id,darkMode}) {
          
-   const [activeItem, setActiveItem] = useState(false);
+   const [activeItem, setActiveItem] = useState(true);
 
    const checkHandler = () => {
      setActiveItem(!activeItem);
