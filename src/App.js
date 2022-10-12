@@ -27,8 +27,6 @@ function App() {
     }
   }, []);
 
-  console.log(mobileView);
-
   return (
     <div
       className={darkMode ? "main-wrapper" : "main-wrapper main-wrapper-dark"}>

@@ -17,7 +17,6 @@ function Todo({
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
-          console.log(todo.id);
           todo.active = !todo.active;
         }
         return todo;

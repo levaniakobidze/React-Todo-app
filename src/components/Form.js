@@ -8,7 +8,6 @@ function Form({
   setTodos,
   darkMode,
   setCompleted,
-  setActiveFilter,
 }) {
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
