@@ -138,6 +138,14 @@ function TodoList({
                 </div>
 
                 <h3 onClick={allClearHandler}>Clear Completed</h3>
+                <span
+                  className={
+                    !darkMode
+                      ? "drag_and_drop"
+                      : "drag_and_drop drag_and_drop_dark"
+                  }>
+                  Drag and drop to reorder list
+                </span>
               </div>
               {provided.placeholder}
             </ul>
