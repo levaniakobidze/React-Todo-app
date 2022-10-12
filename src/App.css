@@ -216,6 +216,8 @@ form {
     padding: 50px 10px;
   }
   .main-todo-wrapper {
+    margin-top: 80px !important;
+
     width: 100%;
   }
   .middle {
