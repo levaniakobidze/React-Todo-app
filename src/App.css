@@ -16,7 +16,7 @@ body {
   width: 100%;
   object-fit: cover;
   min-height: 100vh;
-  padding-top: 3rem;
+  padding-top: 3.8rem;
   position: relative;
   background-color: #fafafa;
   display: flex;
@@ -80,7 +80,7 @@ form {
 .list-wrapper {
   background: #ffffff;
   border-radius: 5px;
-  margin-top: 45px;
+  margin-top: 25px;
   border-radius: 3px;
   border-radius: 5px;
 }
