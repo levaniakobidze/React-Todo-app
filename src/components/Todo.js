@@ -1,26 +1,50 @@
 import React, { useState } from "react";
 import "../App.css";
-import { AiOutlineClose } from "react-icons/ai";
+import x from "../assets/x.svg";
+import circle from "../assets/circle.svg";
 
-function Todo({ todos, text, setTodos, id, darkMode }) {
-  const [activeItem, setActiveItem] = useState(true);
-
-  const checkHandler = () => {
-    setActiveItem(!activeItem);
+function Todo({
+  todos,
+  text,
+  setTodos,
+  id,
+  darkMode,
+  active,
+  filteredTodos,
+  setFilteredTodos,
+}) {
+  const checkHandler = (id) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          console.log(todo.id);
+          todo.active = !todo.active;
+        }
+        return todo;
+      })
+    );
   };
   const deleteTodo = () => {
-    const newTodos = todos.filter((todo) => todo.id !== id);
-    setTodos(newTodos);
-    console.log(newTodos);
+    const newTodos = filteredTodos.filter((todo) => todo.id !== id);
+    setFilteredTodos(newTodos);
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
   return (
-    <div className='todo'>
+    <div className={!darkMode ? "todo" : "todo todo_light"}>
       <div className='todo-item-cont'>
-        <input type='checkbox' onClick={checkHandler} />
-        <li className={activeItem ? "todo-item" : "todo-item non-active"}>
-          <h4 className={!darkMode && "dark-text"}>{text}</h4>
+        <div
+          className={darkMode ? "checkbox" : "checkbox checkbox_dark"}
+          onClick={() => checkHandler(id)}>
+          {!active && <img src={circle} alt='circle' />}
+        </div>
+        <li className={active == true ? "todo-item" : "todo-item non-active"}>
+          <h4
+            className={`${!darkMode && "dark-text"}
+            }`}>
+            {text}
+          </h4>
         </li>
-        <AiOutlineClose onClick={deleteTodo} className='delete-icon' />
+        <img src={x} alt='x' onClick={deleteTodo} className='delete_btn' />
       </div>
     </div>
   );
